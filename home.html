@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Shoe Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">E-Shoe</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#" onclick="alert('Coming Soon')">Men</a></li>
+            <li><a href="#" onclick="alert('Coming Soon')">Women</a></li>
+            <li><a href="#" onclick="alert('Coming Soon')">Kids</a></li>
+            <li><a href="nonexistent.html">Test 404</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Step Into Comfort & Style</h1>
+        <p>The ultimate collection of premium shoes crafted for your lifestyle.</p>
+        <button class="btn-primary" onclick="scrollToProducts()">Shop Now</button>
+    </div>
+</section>
+
+<section class="products" id="products">
+    <h2>Our Shoe Collection</h2>
+
+    <div class="product-grid" id="productGrid">
+        <!-- Shoes will be loaded by JS -->
+    </div>
+</section>
+
+<footer>
+    <p>E-Shoe Store © 2025. All rights reserved.</p>
+</footer>
+
+<!-- PRODUCT DETAILS POPUP MODAL -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <img id="modalImg" src="">
+        <h2 id="modalName"></h2>
+        <p id="modalPrice"></p>
+        <p id="modalDesc"></p>
+
+        <button id="modalBuyBtn">Add to Cart</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
