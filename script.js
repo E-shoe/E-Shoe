@@ -1,36 +1,35 @@
 const shoes = [
     {
-        name: "AirMax Pro",
-        price: "₹3,999",
-        img: "https://i.imgur.com/fQF1pMc.png",
-        desc: "Lightweight running shoe with breathable mesh and enhanced cushioning."
-    },
-    {
-        name: "Urban Runner",
-        price: "₹2,799",
-        img: "https://i.imgur.com/xZQZgQG.png",
-        desc: "Perfect for daily use with flexible support and urban street style."
-    },
-    {
-        name: "SportX Boost",
+        name: "AirMax Pro X",
         price: "₹4,499",
-        img: "https://i.imgur.com/TXz2F4L.png",
-        desc: "High-performance shoe designed for athletes seeking energy return."
+        img: "https://i.imgur.com/fQF1pMc.png",
+        desc: "Next-gen cushioning with neon energy return system."
     },
     {
-        name: "Flex Vision",
+        name: "Urban Runner V2",
         price: "₹3,299",
+        img: "https://i.imgur.com/xZQZgQG.png",
+        desc: "Premium lightweight shoe for futuristic street wear."
+    },
+    {
+        name: "SportX Boost 2049",
+        price: "₹5,199",
+        img: "https://i.imgur.com/TXz2F4L.png",
+        desc: "Engineered for athletes with adaptive power mesh."
+    },
+    {
+        name: "NeoFlex Vision",
+        price: "₹3,999",
         img: "https://i.imgur.com/0Wv7k4o.png",
-        desc: "Comfortable and stylish, ideal for long walks and casual wear."
+        desc: "Glass-design inspired shoe with hologram reflect tech."
     }
 ];
 
-// Load shoes into homepage
 const productGrid = document.getElementById("productGrid");
 
-shoes.forEach((shoe, index) => {
+shoes.forEach((shoe, i) => {
     productGrid.innerHTML += `
-        <div class="product-card" onclick="showDetails(${index})">
+        <div class="product-card">
             <img src="${shoe.img}">
             <h3>${shoe.name}</h3>
             <p>${shoe.price}</p>
@@ -38,26 +37,6 @@ shoes.forEach((shoe, index) => {
     `;
 });
 
-// Modal functionality
-const modal = document.getElementById("productModal");
-
-function showDetails(i) {
-    document.getElementById("modalImg").src = shoes[i].img;
-    document.getElementById("modalName").innerText = shoes[i].name;
-    document.getElementById("modalPrice").innerText = shoes[i].price;
-    document.getElementById("modalDesc").innerText = shoes[i].desc;
-
-    modal.style.display = "flex";
-}
-
-function closeModal() {
-    modal.style.display = "none";
-}
-
 function scrollToProducts() {
     document.getElementById("products").scrollIntoView({ behavior: "smooth" });
 }
-
-window.onclick = function(e) {
-    if (e.target === modal) modal.style.display = "none";
-};
